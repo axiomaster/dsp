@@ -1,0 +1,206 @@
+******************************************************************************
+               TMS320C6x Linker PC v7.4.2                      
+******************************************************************************
+>> Linked Tue Apr 21 16:29:33 2015
+
+OUTPUT FILE NAME:   <gpio_int_int.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00800ea0
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  VEC                   00000000   00000200  00000180  00000080  RWIX
+  DSPL2ROM              00700000   00100000  00000000  00100000  RWIX
+  DSPL2RAM              00800200   0003fc00  00001224  0003e9dc  RWIX
+  DSPL1PRAM             00e00000   00008000  00000000  00008000  RWIX
+  DSPL1DRAM             00f00000   00008000  00000000  00008000  RWIX
+  SHDSPL2ROM            11700000   00100000  00000000  00100000  RWIX
+  SHDSPL2RAM            11800200   0003fc00  00000000  0003fc00  RWIX
+  SHDSPL1PRAM           11e00000   00008000  00000000  00008000  RWIX
+  SHDSPL1DRAM           11f00000   00008000  00000000  00008000  RWIX
+  EMIFACS0              40000000   20000000  00000000  20000000  RWIX
+  EMIFACS2              60000000   02000000  00000000  02000000  RWIX
+  EMIFACS3              62000000   02000000  00000000  02000000  RWIX
+  EMIFACS4              64000000   02000000  00000000  02000000  RWIX
+  EMIFACS5              66000000   02000000  00000000  02000000  RWIX
+  SHRAM                 80000000   00020000  00000050  0001ffb0  RWIX
+  DDR2                  c0000000   20000000  00000000  20000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.vecs      0    00000000    00000180     
+                  00000000    00000160     vec.obj (.vecs)
+                  00000160    00000020     gpio_init.obj ($Tramp$S$$_fpga_isr)
+
+.pinit     0    80000000    00000000     UNINITIALIZED
+
+.text      0    00800200    00000e20     
+                  00800200    00000560     pll_init.obj (.text)
+                  00800760    000001c0     psc.obj (.text)
+                  00800920    00000120     gpio_init.obj (.text)
+                  00800a40    000000e0     pinmux.obj (.text)
+                  00800b20    000000c0     rts6740.lib : autoinit.obj (.text:__auto_init)
+                  00800be0    000000c0                 : exit.obj (.text:_exit)
+                  00800ca0    000000c0     main.obj (.text)
+                  00800d60    000000a0     rts6740.lib : cpy_tbl.obj (.text:_copy_in)
+                  00800e00    000000a0                 : memcpy64.obj (.text:_memcpy)
+                  00800ea0    00000080                 : boot.obj (.text:_c_int00)
+                  00800f20    00000060                 : cpp_init.obj (.text:___TI_cpp_init)
+                  00800f80    00000040                 : args_main.obj (.text:__args_main)
+                  00800fc0    00000040     gpio_init.obj (.text:retain)
+                  00801000    00000020     rts6740.lib : exit.obj (.text:_abort)
+
+.data      0    00800200    00000000     UNINITIALIZED
+
+.stack     0    00801020    00000400     UNINITIALIZED
+                  00801020    00000008     rts6740.lib : boot.obj (.stack)
+                  00801028    000003f8     --HOLE--
+
+.bss       0    00801420    00000004     UNINITIALIZED
+                  00801420    00000004     main.obj (.bss)
+
+.cinit     0    80000000    00000044     
+                  80000000    0000002c     rts6740.lib : exit.obj (.cinit)
+                  8000002c    00000004     --HOLE-- [fill = 0]
+                  80000030    0000000c     main.obj (.cinit)
+                  8000003c    00000004     --HOLE-- [fill = 0]
+                  80000040    00000004     (.pad.cinit) [fill = 0]
+
+.far       0    80000044    0000000c     UNINITIALIZED
+                  80000044    0000000c     rts6740.lib : exit.obj (.far)
+
+
+FAR CALL TRAMPOLINES
+
+callee name               trampoline name
+   callee addr  tramp addr   call addr  call info
+--------------  -----------  ---------  ----------------
+$.text:retain:gpio_init.obj$0x0  $Tramp$S$$_fpga_isr
+   00800fc0     00000160     00000130   vec.obj (.vecs)
+
+[1 trampolines]
+[1 trampoline calls]
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00801420   $bss
+00801420   .bss
+00800200   .data
+00800200   .text
+00801000   C$$EXIT
+008009a0   _CCA_fpga
+00800920   _GPIO_int_init
+00800200   _PLL0_init
+00800564   _PLL1_init
+008007e4   _PSCModuleControl
+00801420   __STACK_END
+00000400   __STACK_SIZE
+00000001   __TI_args_main
+00800f20   ___TI_cpp_init
+8000004c   ___TI_enable_exit_profile_output
+ffffffff   ___TI_pprof_out_hndl
+ffffffff   ___TI_prof_data_size
+ffffffff   ___TI_prof_data_start
+ffffffff   ___binit__
+00801420   ___bss__
+ffffffff   ___c_args__
+80000000   ___cinit__
+00800200   ___data__
+00800200   ___edata__
+00801424   ___end__
+00801020   ___etext__
+ffffffff   ___pinit__
+00800200   ___text__
+00800f80   __args_main
+00800b20   __auto_init
+80000044   __cleanup_ptr
+80000048   __dtors_ptr
+00801020   __stack
+00801000   _abort
+00800ea0   _c_int00
+00800d60   _copy_in
+00800954   _disable_int
+00800974   _enable_int
+00800be0   _exit
+00801420   _flag
+00800fc0   _fpga_isr
+00800d1c   _main
+00800e00   _memcpy
+00800a40   _pinmux
+00800760   _psc
+00800728   _sw_wait
+ffffffff   binit
+80000000   cinit
+00800200   edata
+00801424   end
+00801020   etext
+ffffffff   pinit
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000001   __TI_args_main
+00000400   __STACK_SIZE
+00800200   .data
+00800200   .text
+00800200   _PLL0_init
+00800200   ___data__
+00800200   ___edata__
+00800200   ___text__
+00800200   edata
+00800564   _PLL1_init
+00800728   _sw_wait
+00800760   _psc
+008007e4   _PSCModuleControl
+00800920   _GPIO_int_init
+00800954   _disable_int
+00800974   _enable_int
+008009a0   _CCA_fpga
+00800a40   _pinmux
+00800b20   __auto_init
+00800be0   _exit
+00800d1c   _main
+00800d60   _copy_in
+00800e00   _memcpy
+00800ea0   _c_int00
+00800f20   ___TI_cpp_init
+00800f80   __args_main
+00800fc0   _fpga_isr
+00801000   C$$EXIT
+00801000   _abort
+00801020   ___etext__
+00801020   __stack
+00801020   etext
+00801420   $bss
+00801420   .bss
+00801420   __STACK_END
+00801420   ___bss__
+00801420   _flag
+00801424   ___end__
+00801424   end
+80000000   ___cinit__
+80000000   cinit
+80000044   __cleanup_ptr
+80000048   __dtors_ptr
+8000004c   ___TI_enable_exit_profile_output
+ffffffff   ___TI_pprof_out_hndl
+ffffffff   ___TI_prof_data_size
+ffffffff   ___TI_prof_data_start
+ffffffff   ___binit__
+ffffffff   ___c_args__
+ffffffff   ___pinit__
+ffffffff   binit
+ffffffff   pinit
+
+[52 symbols]

@@ -1,0 +1,1 @@
+"./vec.obj" "./psc.obj" "./pll_init.obj" "./pinmux.obj" "./main.obj" "./gpio_init.obj" "../C6748.cmd" "../rts6740.lib" -l"libc.a" 

@@ -1,0 +1,1 @@
+"./spread.obj" "./scrambler.obj" "./main.obj" "./interleave.obj" "./dpsk.obj" "./complex.obj" "./PHYtx.obj" "./PHYrx.obj" "./PHYHeadGen.obj" "./PHYHeadCRC.obj" "./BCH.obj" "../C6748.cmd" -l"libc.a" 

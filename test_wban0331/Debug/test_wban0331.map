@@ -1,0 +1,897 @@
+******************************************************************************
+               TMS320C6x Linker PC v7.4.4                      
+******************************************************************************
+>> Linked Tue May 05 18:48:44 2015
+
+OUTPUT FILE NAME:   <test_wban0331.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00838520
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  DSPL2ROM              00700000   00100000  00000200  000ffe00  RWIX
+  DSPL2RAM              00800000   00040000  0003c3b5  00003c4b  RWIX
+  DSPL1PRAM             00e00000   00008000  00000000  00008000  RWIX
+  DSPL1DRAM             00f00000   00008000  00000000  00008000  RWIX
+  SHDSPL2ROM            11700000   00100000  00000000  00100000  RWIX
+  SHDSPL2RAM            11800000   00040000  00000000  00040000  RWIX
+  SHDSPL1PRAM           11e00000   00008000  00000000  00008000  RWIX
+  SHDSPL1DRAM           11f00000   00008000  00000000  00008000  RWIX
+  EMIFACS0              40000000   20000000  00000000  20000000  RWIX
+  EMIFACS2              60000000   02000000  00000000  02000000  RWIX
+  EMIFACS3              62000000   02000000  00000000  02000000  RWIX
+  EMIFACS4              64000000   02000000  00000000  02000000  RWIX
+  EMIFACS5              66000000   02000000  00000000  02000000  RWIX
+  SHRAM                 80000000   00020000  0000bac0  00014540  RWIX
+  DDR2                  c0000000   20000000  00000000  20000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.pinit     0    80000000    00000000     UNINITIALIZED
+
+.vecs      0    00700000    00000200     
+                  00700000    00000200     vec.obj (.vecs)
+
+.data      0    00800000    00000000     UNINITIALIZED
+
+.sysmem    0    00800000    00020000     UNINITIALIZED
+                  00800000    00000008     rts6740.lib : memory.obj (.sysmem)
+                  00800008    0001fff8     --HOLE--
+
+.text      0    00820000    00018ce0     
+                  00820000    000069e0     WbanMAC.obj (.text)
+                  008269e0    00002340     WbanTasks.obj (.text)
+                  00828d20    000021c0     BCH.obj (.text)
+                  0082aee0    00001640     WbanSecurity.obj (.text)
+                  0082c520    00000de0     WbanPHY.obj (.text)
+                  0082d300    00000d80     AES_Encrypt.obj (.text)
+                  0082e080    00000860     dpsk.obj (.text)
+                  0082e8e0    00000660     AES_Decrypt.obj (.text)
+                  0082ef40    00000600     PHYrx.obj (.text)
+                  0082f540    00000600     PHYtx.obj (.text)
+                  0082fb40    000005a0     rts6740.lib : divd.obj (.text:__divd)
+                  008300e0    00000580                 : _printfi.obj (.text:__getarg_diouxp)
+                  00830660    00000560     pll_init.obj (.text)
+                  00830bc0    00000480     rts6740.lib : _printfi.obj (.text:__setfield)
+                  00831040    00000480     interleave.obj (.text)
+                  008314c0    00000440     rts6740.lib : _printfi.obj (.text:__printfi)
+                  00831900    00000400     spi1_init_slave.obj (.text)
+                  00831d00    000003a0     complex.obj (.text)
+                  008320a0    00000340     PHYHeadCRC.obj (.text)
+                  008323e0    00000320     spi0_FPGA_16bit_fushu.obj (.text)
+                  00832700    00000300     rts6740.lib : fputs.obj (.text:_fputs)
+                  00832a00    000002e0                 : cos.obj (.text:_cos)
+                  00832ce0    000002c0                 : _printfi.obj (.text:__pproc_fge)
+                  00832fa0    000002c0                 : _printfi.obj (.text:__pproc_fwp)
+                  00833260    000002c0     spread.obj (.text)
+                  00833520    000002a0     rts6740.lib : _printfi.obj (.text:_ecvt)
+                  008337c0    000002a0                 : _printfi.obj (.text:_fcvt)
+                  00833a60    00000280     AES_CBC.obj (.text)
+                  00833ce0    00000280     CpuTimers.obj (.text)
+                  00833f60    00000280     rts6740.lib : memory.obj (.text:_free)
+                  008341e0    00000280                 : sin.obj (.text:_sin)
+                  00834460    00000260                 : imath64.obj (.text:__divull)
+                  008346c0    00000260                 : _printfi.obj (.text:__pconv_e)
+                  00834920    00000260     scrambler.obj (.text)
+                  00834b80    00000240     rts6740.lib : _printfi.obj (.text:__pproc_diouxp)
+                  00834dc0    00000220                 : _printfi.obj (.text:__pproc_str)
+                  00834fe0    00000200                 : _printfi.obj (.text:__pconv_g)
+                  008351e0    00000200                 : log.obj (.text:_log)
+                  008353e0    000001e0     psc.obj (.text)
+                  008355c0    000001c0     rts6740.lib : _printfi.obj (.text:__mcpy)
+                  00835780    000001a0     PHYHeadGen.obj (.text)
+                  00835920    000001a0     rts6740.lib : imath40.obj (.text:__divul)
+                  00835ac0    00000180                 : trgdrv.obj (.text:_HOSTrename)
+                  00835c40    00000180                 : memory.obj (.text:_malloc)
+                  00835dc0    00000180                 : setvbuf.obj (.text:_setvbuf)
+                  00835f40    00000140                 : _printfi.obj (.text:__pproc_fflags)
+                  00836080    00000140                 : fputc.obj (.text:_fputc)
+                  008361c0    00000140                 : lowlev.obj (.text:_getdevice)
+                  00836300    00000140                 : sqrt.obj (.text:_sqrt)
+                  00836440    00000120                 : fixfull.obj (.text:__fixfull)
+                  00836560    00000120                 : fclose.obj (.text:_fclose)
+                  00836680    00000120                 : frexp.obj (.text:_frexp)
+                  008367a0    00000100                 : trgdrv.obj (.text:_HOSTlseek)
+                  008368a0    00000100                 : autoinit.obj (.text:__auto_init)
+                  008369a0    00000100                 : _printfi.obj (.text:__ltostr)
+                  00836aa0    00000100                 : _io_perm.obj (.text:__wrt_ok)
+                  00836ba0    000000e0                 : trgdrv.obj (.text:_HOSTopen)
+                  00836c80    000000e0                 : divi.obj (.text:__divi)
+                  00836d60    000000e0                 : atoi.obj (.text:_atoi)
+                  00836e40    000000e0                 : lowlev.obj (.text:_close)
+                  00836f20    000000e0                 : exit.obj (.text:_exit)
+                  00837000    000000e0                 : memset.obj (.text:_memset)
+                  008370e0    000000e0     pinmux.obj (.text)
+                  008371c0    000000c0     rts6740.lib : trgdrv.obj (.text:_HOSTread)
+                  00837280    000000c0                 : trgdrv.obj (.text:_HOSTunlink)
+                  00837340    000000c0                 : trgdrv.obj (.text:_HOSTwrite)
+                  00837400    000000c0                 : fopen.obj (.text:__cleanup)
+                  008374c0    000000c0                 : _printfi.obj (.text:__div)
+                  00837580    000000c0                 : divu.obj (.text:__divu)
+                  00837640    000000c0                 : fflush.obj (.text:__doflush)
+                  00837700    000000c0                 : remi.obj (.text:__remi)
+                  008377c0    000000c0                 : fseek.obj (.text:_fseek)
+                  00837880    000000c0                 : lowlev.obj (.text:_lseek)
+                  00837940    000000c0                 : ltoa.obj (.text:_ltoa)
+                  00837a00    000000c0                 : lowlev.obj (.text:_write)
+                  00837ac0    000000a0                 : trgdrv.obj (.text:_HOSTclose)
+                  00837b60    000000a0                 : trgdrv.obj (.text:_HOSTtime)
+                  00837c00    000000a0                 : imath40.obj (.text:__divli)
+                  00837ca0    000000a0                 : _printfi.obj (.text:__ecpy)
+                  00837d40    000000a0                 : _printfi.obj (.text:__fcpy)
+                  00837de0    000000a0                 : fixdli.obj (.text:__fixdli)
+                  00837e80    000000a0                 : fltulld.obj (.text:__fltulld)
+                  00837f20    000000a0                 : round.obj (.text:__nround)
+                  00837fc0    000000a0                 : _printfi.obj (.text:__pconv_f)
+                  00838060    000000a0                 : cpy_tbl.obj (.text:_copy_in)
+                  00838100    000000a0                 : lowlev.obj (.text:_finddevice)
+                  008381a0    000000a0                 : memcpy64.obj (.text:_memcpy)
+                  00838240    000000a0                 : memory.obj (.text:_minsert)
+                  008382e0    000000a0                 : modf.obj (.text:_modf)
+                  00838380    000000a0                 : memory.obj (.text:_mremove)
+                  00838420    00000080                 : fltlid.obj (.text:__fltlid)
+                  008384a0    00000080                 : llshift.obj (.text:__llshl)
+                  00838520    00000080                 : boot.obj (.text:_c_int00)
+                  008385a0    00000080                 : memory.obj (.text:_calloc)
+                  00838620    00000080                 : printf.obj (.text:_printf)
+                  008386a0    00000080                 : rand.obj (.text:_rand)
+                  00838720    00000080                 : trgmsg.obj (.text:_readmsg)
+                  008387a0    00000080                 : lowlev.obj (.text:_unlink)
+                  00838820    00000060                 : imath64.obj (.text:__subcull)
+                  00838880    00000060                 : memccpy.obj (.text:_memccpy)
+                  008388e0    00000060                 : rand.obj (.text:_srand)
+                  00838940    00000060                 : trgmsg.obj (.text:_writemsg)
+                  008389a0    00000060     main.obj (.text)
+                  00838a00    00000040     rts6740.lib : isinf.obj (.text:___isinf)
+                  00838a40    00000040                 : _printfi.obj (.text:___isnan)
+                  00838a80    00000040                 : args_main.obj (.text:__args_main)
+                  00838ac0    00000040                 : frcmpyd_div.obj (.text:__frcmpyd_div)
+                  00838b00    00000040                 : llshift.obj (.text:__llshru)
+                  00838b40    00000040                 : imath40.obj (.text:__remli)
+                  00838b80    00000040                 : ceil.obj (.text:_ceil)
+                  00838bc0    00000040                 : time.obj (.text:_time)
+                  00838c00    00000020                 : negll.obj (.text:__negll)
+                  00838c20    00000020                 : _lock.obj (.text:__nop)
+                  00838c40    00000020                 : printf.obj (.text:__outc)
+                  00838c60    00000020                 : printf.obj (.text:__outs)
+                  00838c80    00000020                 : trunc.obj (.text:__trunc)
+                  00838ca0    00000020                 : exit.obj (.text:_abort)
+                  00838cc0    00000020                 : remove.obj (.text:_remove)
+
+.const     0    00838ce0    00001f61     
+                  00838ce0    00000d90     WbanMAC.obj (.const:.string)
+                  00839a70    000007a4     WbanTasks.obj (.const:.string)
+                  0083a214    00000002     rts6740.lib : fputs.obj (.const:.string)
+                  0083a216    00000002     --HOLE-- [fill = 0]
+                  0083a218    0000017a     BCH.obj (.const:_$P$T1$2)
+                  0083a392    00000002     --HOLE-- [fill = 0]
+                  0083a394    00000160     WbanSecurity.obj (.const:.string)
+                  0083a4f4    00000004     --HOLE-- [fill = 0]
+                  0083a4f8    00000101     rts6740.lib : ctype.obj (.const:__ctypes_)
+                  0083a5f9    00000007     --HOLE-- [fill = 0]
+                  0083a600    00000100     AES_Decrypt.obj (.const:_$P$T0$1)
+                  0083a700    00000100     AES_Encrypt.obj (.const:_$P$T0$1)
+                  0083a800    000000e4     WbanPHY.obj (.const:.string)
+                  0083a8e4    00000074     PHYrx.obj (.const:.string)
+                  0083a958    0000005a     PHYtx.obj (.const:.string:_$P$T0$1)
+                  0083a9b2    00000006     --HOLE-- [fill = 0]
+                  0083a9b8    0000005a     PHYtx.obj (.const:.string:_$P$T1$2)
+                  0083aa12    00000006     --HOLE-- [fill = 0]
+                  0083aa18    0000003f     BCH.obj (.const:.string:_$P$T2$3)
+                  0083aa57    00000001     --HOLE-- [fill = 0]
+                  0083aa58    00000034     main.obj (.const:.string)
+                  0083aa8c    0000002c     PHYtx.obj (.const:.string)
+                  0083aab8    0000002c     AES_Encrypt.obj (.const:_$P$T1$2)
+                  0083aae4    00000028     CpuTimers.obj (.const:.string)
+                  0083ab0c    00000023     rts6740.lib : _printfi.obj (.const:.string)
+                  0083ab2f    00000001     --HOLE-- [fill = 0]
+                  0083ab30    00000020     dpsk.obj (.const)
+                  0083ab50    00000018     BCH.obj (.const:_$P$T0$1)
+                  0083ab68    00000010     spi0_FPGA_16bit_fushu.obj (.const:.string)
+                  0083ab78    00000010     AES_CBC.obj (.const:_$P$T0$1)
+                  0083ab88    00000010     AES_CBC.obj (.const:_$P$T1$2)
+                  0083ab98    00000010     AES_Decrypt.obj (.const:_$P$T1$3)
+                  0083aba8    00000010     AES_Decrypt.obj (.const:_$P$T2$4)
+                  0083abb8    00000010     AES_Encrypt.obj (.const:_$P$T2$4)
+                  0083abc8    00000010     AES_Encrypt.obj (.const:_$P$T3$5)
+                  0083abd8    0000000e     scrambler.obj (.const:.string:_$P$T0$1)
+                  0083abe6    00000002     --HOLE-- [fill = 0]
+                  0083abe8    0000000e     scrambler.obj (.const:.string:_$P$T1$2)
+                  0083abf6    00000002     --HOLE-- [fill = 0]
+                  0083abf8    0000000d     BCH.obj (.const:.string:_$P$T3$4)
+                  0083ac05    00000003     --HOLE-- [fill = 0]
+                  0083ac08    0000000d     BCH.obj (.const:.string:_$P$T4$5)
+                  0083ac15    00000003     --HOLE-- [fill = 0]
+                  0083ac18    0000000c     spi1_init_slave.obj (.const:.string)
+                  0083ac24    00000004     --HOLE-- [fill = 0]
+                  0083ac28    00000006     WbanPHY.obj (.const:.string:_$P$T0$1)
+                  0083ac2e    00000002     --HOLE-- [fill = 0]
+                  0083ac30    00000004     PHYHeadCRC.obj (.const:.string:_$P$T0$1)
+                  0083ac34    00000004     --HOLE-- [fill = 0]
+                  0083ac38    00000004     PHYHeadCRC.obj (.const:.string:_$P$T1$2)
+                  0083ac3c    00000004     --HOLE-- [fill = 0]
+                  0083ac40    00000001     WbanPHY.obj (.const:.string:_$P$T1$2)
+
+.stack     0    0083ac48    00001600     UNINITIALIZED
+                  0083ac48    00000008     rts6740.lib : boot.obj (.stack)
+                  0083ac50    000015f8     --HOLE--
+
+.cio       0    0083c248    00000120     UNINITIALIZED
+                  0083c248    00000120     rts6740.lib : trgmsg.obj (.cio)
+
+.bss       0    0083c368    00000054     UNINITIALIZED
+                  0083c368    0000001a     WbanMAC.obj (.bss)
+                  0083c382    00000002     main.obj (.bss)
+                  0083c384    0000001a     WbanPHY.obj (.bss)
+                  0083c39e    00000002     --HOLE--
+                  0083c3a0    0000000d     WbanSecurity.obj (.bss)
+                  0083c3ad    00000001     --HOLE--
+                  0083c3ae    00000005     WbanTasks.obj (.bss)
+                  0083c3b3    00000001     --HOLE--
+                  0083c3b4    00000004     spi0_FPGA_16bit_fushu.obj (.bss)
+                  0083c3b8    00000004     spi1_init_slave.obj (.bss)
+
+.far       0    80000000    0000b5f0     UNINITIALIZED
+                  80000000    00008da0     WbanPHY.obj (.far)
+                  80008da0    00001170     WbanMAC.obj (.far)
+                  80009f10    00000fe0     WbanTasks.obj (.far)
+                  8000aef0    00000324     rts6740.lib : defs.obj (.far)
+                  8000b214    00000004                 : errno.obj (.far)
+                  8000b218    0000011c                 : lowlev.obj (.far)
+                  8000b334    00000004                 : fopen.obj (.far)
+                  8000b338    000000d8     WbanSecurity.obj (.far)
+                  8000b410    000000d0     rts6740.lib : trgdrv.obj (.far)
+                  8000b4e0    00000040                 : cos.obj (.far)
+                  8000b520    00000040                 : sin.obj (.far)
+                  8000b560    00000030                 : log.obj (.far)
+                  8000b590    00000018     CpuTimers.obj (.far)
+                  8000b5a8    00000010     AES_Decrypt.obj (.far)
+                  8000b5b8    00000010     AES_Encrypt.obj (.far)
+                  8000b5c8    0000000c     rts6740.lib : exit.obj (.far)
+                  8000b5d4    00000008                 : _lock.obj (.far)
+                  8000b5dc    00000008                 : memory.obj (.far)
+                  8000b5e4    00000004     --HOLE--
+                  8000b5e8    00000008                 : rand.obj (.far)
+
+.cinit     0    8000b5f0    0000031c     
+                  8000b5f0    0000005c     rts6740.lib : defs.obj (.cinit)
+                  8000b64c    00000004     --HOLE-- [fill = 0]
+                  8000b650    0000005c                 : lowlev.obj (.cinit)
+                  8000b6ac    00000004     --HOLE-- [fill = 0]
+                  8000b6b0    00000048     WbanSecurity.obj (.cinit)
+                  8000b6f8    00000048     rts6740.lib : cos.obj (.cinit)
+                  8000b740    00000048                 : sin.obj (.cinit)
+                  8000b788    00000040                 : log.obj (.cinit)
+                  8000b7c8    00000039     WbanTasks.obj (.cinit)
+                  8000b801    00000007     --HOLE-- [fill = 0]
+                  8000b808    00000030     WbanPHY.obj (.cinit)
+                  8000b838    0000002c     rts6740.lib : exit.obj (.cinit)
+                  8000b864    00000004     --HOLE-- [fill = 0]
+                  8000b868    0000002c                 : memory.obj (.cinit)
+                  8000b894    00000004     --HOLE-- [fill = 0]
+                  8000b898    0000001c                 : _lock.obj (.cinit)
+                  8000b8b4    00000004     --HOLE-- [fill = 0]
+                  8000b8b8    00000010                 : rand.obj (.cinit)
+                  8000b8c8    0000000c                 : errno.obj (.cinit)
+                  8000b8d4    00000004     --HOLE-- [fill = 0]
+                  8000b8d8    0000000c                 : fopen.obj (.cinit)
+                  8000b8e4    00000004     --HOLE-- [fill = 0]
+                  8000b8e8    0000000c     spi0_FPGA_16bit_fushu.obj (.cinit)
+                  8000b8f4    00000004     --HOLE-- [fill = 0]
+                  8000b8f8    0000000c     spi1_init_slave.obj (.cinit)
+                  8000b904    00000004     --HOLE-- [fill = 0]
+                  8000b908    00000004     (.pad.cinit) [fill = 0]
+
+.switch    0    8000b90c    000001b4     
+                  8000b90c    00000064     WbanTasks.obj (.switch:_primitiveInBufferProcess)
+                  8000b970    00000060     WbanTasks.obj (.switch:_MACPrimitiveTransmission)
+                  8000b9d0    00000044     WbanMAC.obj (.switch:_MACTasks)
+                  8000ba14    00000040     WbanMAC.obj (.switch:_getBackoffCounter)
+                  8000ba54    00000020     WbanTasks.obj (.switch:_PrimitiveTasks)
+                  8000ba74    00000020     WbanMAC.obj (.switch:_getCP)
+                  8000ba94    0000001c     PHYrx.obj (.switch:_PHYrx)
+                  8000bab0    00000010     WbanPHY.obj (.switch:_PHYTasks)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+0083c368   $bss
+0083c368   .bss
+00800000   .data
+00820000   .text
+00838ca0   C$$EXIT
+00838998   C$$IO$$
+0082e930   _AES_Decrypt
+0082d300   _AES_Encrypt
+0082d7d4   _AddRoundkey
+00826090   _AllocationSlot
+0082a0e4   _BCHDecoding_PHYH
+0082a930   _BCHDecoding_PSDU
+00829fa8   _BCHEncoding_PHYH
+0082a1a0   _BCHEncoding_PSDU
+0082d860   _ByteSubs
+00833ab8   _CBC_encrypt
+0082c9d0   _CCA
+008262ac   _CRC_16_CCITT
+00826334   _CRC_16_CCITT_check
+0082e080   _CalcPhase
+00833e08   _ConfigCpuTimer
+0082e7ac   _DPSK_DeMod_SoftDec
+0082e5a4   _DPSK_DeMod_SoftInfo
+0082e2f4   _DPSK_Mod
+00822fd0   _DataTypeFrameTxCSMA
+00823a88   _DataTypeFrameTxSchedule
+00826714   _DeDataQueue
+00831270   _DeInterleaver
+00826188   _DeNodeFromNodeList
+00833384   _DeSpreader
+00828e20   _Decoding
+00824f40   _Decrypt
+008259f8   _Delay
+00826510   _EnDataQueue
+00825f10   _EnNodeToNodeList
+00824db4   _Encrypt
+0083c39c   _FPGA_length
+800010a0   _FPGArx
+0082d0f8   _FPGArxfun
+0082ca50   _FPGAtxfun
+00825e0c   _GetAbbrAddr
+008267b0   _GetDataQueueHead
+00826960   _GetDataQueueLength
+00826908   _GetDataQueuePacketAckPolicy
+008268b0   _GetDataQueuePacketInformationDataRate
+00826804   _GetDataQueuePacketLength
+00826858   _GetDataQueuePacketPriority
+00837ac0   _HOSTclose
+008367a0   _HOSTlseek
+00836ba0   _HOSTopen
+008371c0   _HOSTread
+00835ac0   _HOSTrename
+00837b60   _HOSTtime
+00837280   _HOSTunlink
+00837340   _HOSTwrite
+00833ce0   _InitCpuTimers
+00826374   _InitDataQueue
+00831040   _Interleaver
+0082ec60   _InvMixColumns
+0082e8e0   _InvSbox
+0082eb6c   _InvShiftRows
+0082eae0   _InvSubBytes
+8000b3b8   _KCK
+0082d4f8   _Keyexpansion
+00824608   _MACDataFrameReception
+00822d64   _MACFrameTransmission
+00820034   _MACGet
+00824874   _MACIAckFrameReception
+00820000   _MACInit
+00823e4c   _MACMngCtrlFrameReception
+00827318   _MACPrimitiveTransmission
+00820064   _MACTasks
+8000b400   _MK
+0082da00   _MixColumns
+008237e4   _MngCtrlTypeFrameTxDirect
+008234c8   _MngCtrlTypeFrameTxPROB
+8000b338   _Nonce_I
+8000b348   _Nonce_R
+8000b3c8   _P
+008321e8   _PHYHeadCRCCheck
+008320a0   _PHYHeadCRCCoding
+00835780   _PHYHeadGen
+0082c520   _PHYTasks
+0082ef40   _PHYrx
+0082f540   _PHYtx
+0083c394   _PLCP_Mod_len
+00830660   _PLL0_init
+008309c4   _PLL1_init
+0083c398   _PPDU_Mod
+00835484   _PSCModuleControl
+0083c38c   _PSDU_LEN
+0083c390   _PSDU_Mod_len
+00828d20   _PSDUcodelen
+8000b3f8   _PTK_Control
+8000b3e8   _PTK_KMAC_2A
+8000b3d8   _PTK_KMAC_2B
+8000b3f0   _PTK_KMAC_3A
+8000b3e0   _PTK_KMAC_3B
+00828c94   _PrimitiveGet
+008269e0   _PrimitiveInit
+00826a88   _PrimitiveTasks
+00827208   _PutToNWK
+0082d704   _Rotword
+008323e0   _SPI0_init
+00831900   _SPI1_init
+0082d4a8   _Sbox
+0082c9e4   _Scan
+00834920   _Scrambler
+00834a50   _Scrambler_Soft
+0082aee0   _SecurityIAckFrameReception
+0082af04   _SecurityMngFrameReception
+0082be68   _SecurityPrimitiveTransmission
+0082bad0   _SecurityTasks
+0082d904   _ShiftRows
+00833260   _Spreader
+0082d76c   _Subword
+0082c164   _TheSecondSendingProcess
+00833ee0   _TickGet
+00825a4c   _TransmitIt
+00833a60   _XOR
+0082db50   _Xtime
+0083c248   __CIOBUF_
+0083c248   __STACK_END
+00001600   __STACK_SIZE
+00020000   __SYSMEM_SIZE
+00000001   __TI_args_main
+8000b5d0   ___TI_enable_exit_profile_output
+ffffffff   ___TI_pprof_out_hndl
+ffffffff   ___TI_prof_data_size
+ffffffff   ___TI_prof_data_start
+ffffffff   ___binit__
+0083c368   ___bss__
+ffffffff   ___c_args__
+8000b5f0   ___cinit__
+00800000   ___data__
+00800000   ___edata__
+0083c3bc   ___end__
+00838ce0   ___etext__
+00838a00   ___isinf
+ffffffff   ___pinit__
+00820000   ___text__
+00838a80   __args_main
+008368a0   __auto_init
+00836c80   __c6xabi_divi
+00837580   __c6xabi_divu
+00837700   __c6xabi_remi
+00837400   __cleanup
+8000b5c8   __cleanup_ptr
+0083a4f8   __ctypes_
+0082fb40   __divd
+00836c80   __divi
+00837c00   __divli
+00837580   __divu
+00835920   __divul
+00834460   __divull
+00837640   __doflush
+8000b5cc   __dtors_ptr
+00837de0   __fixdli
+00836440   __fixfull
+00838420   __fltlid
+00837e80   __fltulld
+00838ac0   __frcmpyd_div
+8000b210   __ft_end
+8000aef0   __ftable
+008384a0   __llshl
+00838b00   __llshru
+8000b5d4   __lock
+00838c00   __negll
+00838c20   __nop
+00837f20   __nround
+008314c0   __printfi
+00837700   __remi
+00838b40   __remli
+0083ac48   __stack
+00838820   __subcull
+00800000   __sys_memory
+8000b0d0   __tmpnams
+00838c80   __trunc
+8000b5d8   __unlock
+00836aa0   __wrt_ok
+00838ca0   _abort
+00836d60   _atoi
+008281a8   _beaconSendTimer
+008250cc   _beaconTransmitProcess
+00838520   _c_int00
+008385a0   _calloc
+00838b80   _ceil
+00836e40   _close
+00838060   _copy_in
+00832a00   _cos
+0082c820   _dataIndicationProcess
+008261d8   _do_crc
+8000b214   _errno
+00836f20   _exit
+0083c37c   _expandedkey
+00831d50   _fadd
+00836560   _fclose
+00832028   _fconj
+00831f24   _fdiv
+00831d00   _fget
+00831e68   _fmul
+80000100   _fpga_buf
+00836080   _fputc
+00832700   _fputs
+00833f60   _free
+00836680   _frexp
+008377c0   _fseek
+00831ddc   _fsub
+00825408   _getBackoffCounter
+00825734   _getCP
+00825c28   _getCurrentSlotNumber
+00825e88   _getIndexFromNodeList
+0082ca0c   _getMACFullAddr
+0083c3b2   _isSend
+008351e0   _log
+00837880   _lseek
+00837940   _ltoa
+800097e0   _macBIB
+0083c36f   _mac_BC
+0083c370   _mac_CP
+0083c36e   _mac_CW
+8000b590   _mac_CpuTimer0
+8000b59c   _mac_CpuTimer1
+80000000   _mac_RxBuffer
+80009f10   _mac_SPIBuffer_Rx
+8000a6d8   _mac_SPIBuffer_Tx
+800097d4   _mac_TasksPending
+80009e10   _mac_TxBuffer
+0083c37a   _mac__i
+0083c3b0   _mac__msdulen
+80008da0   _mac_bufferTemp
+0083c368   _mac_bufferTempLength
+80009df8   _mac_currentPacket
+80008ea0   _mac_dataQueue
+0082edb4   _mac_decrypt
+0082de4c   _mac_encrypt
+800097d8   _mac_frameControl
+0083c378   _mac_i
+0083c3ae   _mac_j
+0083c382   _mac_n
+0083c36c   _mac_packetFCS
+0083c36a   _mac_packetHeader
+8000aeb4   _mac_primitiveInfo
+0083c388   _mac_rxBufferlen
+0083c380   _mac_s
+0083c381   _mac_slotNumber
+8000ae9c   _mac_spiRxInfo
+8000aea8   _mac_spiTxInfo
+8000aee8   _mac_t
+008389a0   _main
+00835c40   _malloc
+00838880   _memccpy
+008381a0   _memcpy
+00837000   _memset
+0083c3ac   _messageNumber
+008382e0   _modf
+0083c3a4   _p1
+0083c3a8   _p2
+00824c14   _packetWaitingAckProcess
+00824aac   _packetWaitingConnectionRequestProcess
+8000aec0   _params
+008370e0   _pinmux
+8000b358   _plaintext1
+8000b388   _plaintext2
+008281c4   _primitiveInBufferProcess
+00838620   _printf
+008353e0   _psc
+00836080   _putc
+008386a0   _rand
+00838720   _readmsg
+00838cc0   _remove
+0083c3a0   _sec_s
+00835dc0   _setvbuf
+008341e0   _sin
+00832548   _spi0flash_cyclerx
+0083244c   _spi0flash_cycletx
+00831ad8   _spiflash_cyclerx
+0082d1e4   _spiflash_cycletest
+00831968   _spiflash_cycletx
+00836300   _sqrt
+008388e0   _srand
+00830b88   _sw_wait
+00838bc0   _time
+008387a0   _unlink
+00837a00   _write
+00838940   _writemsg
+ffffffff   binit
+8000b5f0   cinit
+00800000   edata
+0083c3bc   end
+00838ce0   etext
+ffffffff   pinit
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000001   __TI_args_main
+00001600   __STACK_SIZE
+00020000   __SYSMEM_SIZE
+00800000   .data
+00800000   ___data__
+00800000   ___edata__
+00800000   __sys_memory
+00800000   edata
+00820000   .text
+00820000   _MACInit
+00820000   ___text__
+00820034   _MACGet
+00820064   _MACTasks
+00822d64   _MACFrameTransmission
+00822fd0   _DataTypeFrameTxCSMA
+008234c8   _MngCtrlTypeFrameTxPROB
+008237e4   _MngCtrlTypeFrameTxDirect
+00823a88   _DataTypeFrameTxSchedule
+00823e4c   _MACMngCtrlFrameReception
+00824608   _MACDataFrameReception
+00824874   _MACIAckFrameReception
+00824aac   _packetWaitingConnectionRequestProcess
+00824c14   _packetWaitingAckProcess
+00824db4   _Encrypt
+00824f40   _Decrypt
+008250cc   _beaconTransmitProcess
+00825408   _getBackoffCounter
+00825734   _getCP
+008259f8   _Delay
+00825a4c   _TransmitIt
+00825c28   _getCurrentSlotNumber
+00825e0c   _GetAbbrAddr
+00825e88   _getIndexFromNodeList
+00825f10   _EnNodeToNodeList
+00826090   _AllocationSlot
+00826188   _DeNodeFromNodeList
+008261d8   _do_crc
+008262ac   _CRC_16_CCITT
+00826334   _CRC_16_CCITT_check
+00826374   _InitDataQueue
+00826510   _EnDataQueue
+00826714   _DeDataQueue
+008267b0   _GetDataQueueHead
+00826804   _GetDataQueuePacketLength
+00826858   _GetDataQueuePacketPriority
+008268b0   _GetDataQueuePacketInformationDataRate
+00826908   _GetDataQueuePacketAckPolicy
+00826960   _GetDataQueueLength
+008269e0   _PrimitiveInit
+00826a88   _PrimitiveTasks
+00827208   _PutToNWK
+00827318   _MACPrimitiveTransmission
+008281a8   _beaconSendTimer
+008281c4   _primitiveInBufferProcess
+00828c94   _PrimitiveGet
+00828d20   _PSDUcodelen
+00828e20   _Decoding
+00829fa8   _BCHEncoding_PHYH
+0082a0e4   _BCHDecoding_PHYH
+0082a1a0   _BCHEncoding_PSDU
+0082a930   _BCHDecoding_PSDU
+0082aee0   _SecurityIAckFrameReception
+0082af04   _SecurityMngFrameReception
+0082bad0   _SecurityTasks
+0082be68   _SecurityPrimitiveTransmission
+0082c164   _TheSecondSendingProcess
+0082c520   _PHYTasks
+0082c820   _dataIndicationProcess
+0082c9d0   _CCA
+0082c9e4   _Scan
+0082ca0c   _getMACFullAddr
+0082ca50   _FPGAtxfun
+0082d0f8   _FPGArxfun
+0082d1e4   _spiflash_cycletest
+0082d300   _AES_Encrypt
+0082d4a8   _Sbox
+0082d4f8   _Keyexpansion
+0082d704   _Rotword
+0082d76c   _Subword
+0082d7d4   _AddRoundkey
+0082d860   _ByteSubs
+0082d904   _ShiftRows
+0082da00   _MixColumns
+0082db50   _Xtime
+0082de4c   _mac_encrypt
+0082e080   _CalcPhase
+0082e2f4   _DPSK_Mod
+0082e5a4   _DPSK_DeMod_SoftInfo
+0082e7ac   _DPSK_DeMod_SoftDec
+0082e8e0   _InvSbox
+0082e930   _AES_Decrypt
+0082eae0   _InvSubBytes
+0082eb6c   _InvShiftRows
+0082ec60   _InvMixColumns
+0082edb4   _mac_decrypt
+0082ef40   _PHYrx
+0082f540   _PHYtx
+0082fb40   __divd
+00830660   _PLL0_init
+008309c4   _PLL1_init
+00830b88   _sw_wait
+00831040   _Interleaver
+00831270   _DeInterleaver
+008314c0   __printfi
+00831900   _SPI1_init
+00831968   _spiflash_cycletx
+00831ad8   _spiflash_cyclerx
+00831d00   _fget
+00831d50   _fadd
+00831ddc   _fsub
+00831e68   _fmul
+00831f24   _fdiv
+00832028   _fconj
+008320a0   _PHYHeadCRCCoding
+008321e8   _PHYHeadCRCCheck
+008323e0   _SPI0_init
+0083244c   _spi0flash_cycletx
+00832548   _spi0flash_cyclerx
+00832700   _fputs
+00832a00   _cos
+00833260   _Spreader
+00833384   _DeSpreader
+00833a60   _XOR
+00833ab8   _CBC_encrypt
+00833ce0   _InitCpuTimers
+00833e08   _ConfigCpuTimer
+00833ee0   _TickGet
+00833f60   _free
+008341e0   _sin
+00834460   __divull
+00834920   _Scrambler
+00834a50   _Scrambler_Soft
+008351e0   _log
+008353e0   _psc
+00835484   _PSCModuleControl
+00835780   _PHYHeadGen
+00835920   __divul
+00835ac0   _HOSTrename
+00835c40   _malloc
+00835dc0   _setvbuf
+00836080   _fputc
+00836080   _putc
+00836300   _sqrt
+00836440   __fixfull
+00836560   _fclose
+00836680   _frexp
+008367a0   _HOSTlseek
+008368a0   __auto_init
+00836aa0   __wrt_ok
+00836ba0   _HOSTopen
+00836c80   __c6xabi_divi
+00836c80   __divi
+00836d60   _atoi
+00836e40   _close
+00836f20   _exit
+00837000   _memset
+008370e0   _pinmux
+008371c0   _HOSTread
+00837280   _HOSTunlink
+00837340   _HOSTwrite
+00837400   __cleanup
+00837580   __c6xabi_divu
+00837580   __divu
+00837640   __doflush
+00837700   __c6xabi_remi
+00837700   __remi
+008377c0   _fseek
+00837880   _lseek
+00837940   _ltoa
+00837a00   _write
+00837ac0   _HOSTclose
+00837b60   _HOSTtime
+00837c00   __divli
+00837de0   __fixdli
+00837e80   __fltulld
+00837f20   __nround
+00838060   _copy_in
+008381a0   _memcpy
+008382e0   _modf
+00838420   __fltlid
+008384a0   __llshl
+00838520   _c_int00
+008385a0   _calloc
+00838620   _printf
+008386a0   _rand
+00838720   _readmsg
+008387a0   _unlink
+00838820   __subcull
+00838880   _memccpy
+008388e0   _srand
+00838940   _writemsg
+00838998   C$$IO$$
+008389a0   _main
+00838a00   ___isinf
+00838a80   __args_main
+00838ac0   __frcmpyd_div
+00838b00   __llshru
+00838b40   __remli
+00838b80   _ceil
+00838bc0   _time
+00838c00   __negll
+00838c20   __nop
+00838c80   __trunc
+00838ca0   C$$EXIT
+00838ca0   _abort
+00838cc0   _remove
+00838ce0   ___etext__
+00838ce0   etext
+0083a4f8   __ctypes_
+0083ac48   __stack
+0083c248   __CIOBUF_
+0083c248   __STACK_END
+0083c368   $bss
+0083c368   .bss
+0083c368   ___bss__
+0083c368   _mac_bufferTempLength
+0083c36a   _mac_packetHeader
+0083c36c   _mac_packetFCS
+0083c36e   _mac_CW
+0083c36f   _mac_BC
+0083c370   _mac_CP
+0083c378   _mac_i
+0083c37a   _mac__i
+0083c37c   _expandedkey
+0083c380   _mac_s
+0083c381   _mac_slotNumber
+0083c382   _mac_n
+0083c388   _mac_rxBufferlen
+0083c38c   _PSDU_LEN
+0083c390   _PSDU_Mod_len
+0083c394   _PLCP_Mod_len
+0083c398   _PPDU_Mod
+0083c39c   _FPGA_length
+0083c3a0   _sec_s
+0083c3a4   _p1
+0083c3a8   _p2
+0083c3ac   _messageNumber
+0083c3ae   _mac_j
+0083c3b0   _mac__msdulen
+0083c3b2   _isSend
+0083c3bc   ___end__
+0083c3bc   end
+80000000   _mac_RxBuffer
+80000100   _fpga_buf
+800010a0   _FPGArx
+80008da0   _mac_bufferTemp
+80008ea0   _mac_dataQueue
+800097d4   _mac_TasksPending
+800097d8   _mac_frameControl
+800097e0   _macBIB
+80009df8   _mac_currentPacket
+80009e10   _mac_TxBuffer
+80009f10   _mac_SPIBuffer_Rx
+8000a6d8   _mac_SPIBuffer_Tx
+8000ae9c   _mac_spiRxInfo
+8000aea8   _mac_spiTxInfo
+8000aeb4   _mac_primitiveInfo
+8000aec0   _params
+8000aee8   _mac_t
+8000aef0   __ftable
+8000b0d0   __tmpnams
+8000b210   __ft_end
+8000b214   _errno
+8000b338   _Nonce_I
+8000b348   _Nonce_R
+8000b358   _plaintext1
+8000b388   _plaintext2
+8000b3b8   _KCK
+8000b3c8   _P
+8000b3d8   _PTK_KMAC_2B
+8000b3e0   _PTK_KMAC_3B
+8000b3e8   _PTK_KMAC_2A
+8000b3f0   _PTK_KMAC_3A
+8000b3f8   _PTK_Control
+8000b400   _MK
+8000b590   _mac_CpuTimer0
+8000b59c   _mac_CpuTimer1
+8000b5c8   __cleanup_ptr
+8000b5cc   __dtors_ptr
+8000b5d0   ___TI_enable_exit_profile_output
+8000b5d4   __lock
+8000b5d8   __unlock
+8000b5f0   ___cinit__
+8000b5f0   cinit
+ffffffff   ___TI_pprof_out_hndl
+ffffffff   ___TI_prof_data_size
+ffffffff   ___TI_prof_data_start
+ffffffff   ___binit__
+ffffffff   ___c_args__
+ffffffff   ___pinit__
+ffffffff   binit
+ffffffff   pinit
+
+[292 symbols]

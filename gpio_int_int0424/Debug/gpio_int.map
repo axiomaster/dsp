@@ -1,0 +1,186 @@
+******************************************************************************
+               TMS320C6x Linker PC v7.4.4                      
+******************************************************************************
+>> Linked Mon Apr 13 14:57:42 2015
+
+OUTPUT FILE NAME:   <gpio_int.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 80001d60
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  DSPL2ROM              00700000   00100000  00000000  00100000  RWIX
+  DSPL2RAM              00800000   00040000  00000000  00040000  RWIX
+  DSPL1PRAM             00e00000   00008000  00000000  00008000  RWIX
+  DSPL1DRAM             00f00000   00008000  00000000  00008000  RWIX
+  SHDSPL2ROM            11700000   00100000  00000000  00100000  RWIX
+  IRAM                  11800200   0003fc00  00000000  0003fc00  RWIX
+  SHDSPL1PRAM           11e00000   00008000  00000000  00008000  RWIX
+  SHDSPL1DRAM           11f00000   00008000  00000000  00008000  RWIX
+  EMIFACS2              60000000   02000000  00000000  02000000  RWIX
+  VEC                   80000000   00000200  00000200  00000000  RWIX
+  SHRAM                 80000200   0001fd00  00001d74  0001df8c  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.pinit     0    80000200    00000000     UNINITIALIZED
+
+.vectors   0    80000000    00000200     
+                  80000000    00000200     vec.obj (.vectors)
+
+.stack     0    80000200    00001000     UNINITIALIZED
+                  80000200    00000008     rts6740.lib : boot.obj (.stack)
+                  80000208    00000ff8     --HOLE--
+
+.data      0    80000200    00000000     UNINITIALIZED
+
+.text      0    80001200    00000d20     
+                  80001200    00000560     pll_init.obj (.text)
+                  80001760    000001c0     psc.obj (.text)
+                  80001920    000000e0     pinmux.obj (.text)
+                  80001a00    000000c0     rts6740.lib : autoinit.obj (.text:__auto_init)
+                  80001ac0    000000c0                 : exit.obj (.text:_exit)
+                  80001b80    000000a0                 : cpy_tbl.obj (.text:_copy_in)
+                  80001c20    000000a0                 : memcpy64.obj (.text:_memcpy)
+                  80001cc0    000000a0     gpio_init.obj (.text)
+                  80001d60    00000080     rts6740.lib : boot.obj (.text:_c_int00)
+                  80001de0    00000060                 : cpp_init.obj (.text:___TI_cpp_init)
+                  80001e40    00000040                 : args_main.obj (.text:__args_main)
+                  80001e80    00000040     main.obj (.text)
+                  80001ec0    00000040     gpio_init.obj (.text:retain)
+                  80001f00    00000020     rts6740.lib : exit.obj (.text:_abort)
+
+.cinit     0    80001f20    00000044     
+                  80001f20    0000002c     rts6740.lib : exit.obj (.cinit)
+                  80001f4c    00000004     --HOLE-- [fill = 0]
+                  80001f50    0000000c     main.obj (.cinit)
+                  80001f5c    00000004     --HOLE-- [fill = 0]
+                  80001f60    00000004     (.pad.cinit) [fill = 0]
+
+.far       0    80001f64    0000000c     UNINITIALIZED
+                  80001f64    0000000c     rts6740.lib : exit.obj (.far)
+
+.bss       0    80001f70    00000004     UNINITIALIZED
+                  80001f70    00000004     main.obj (.bss)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+80001f70   $bss
+80001f70   .bss
+80000200   .data
+80001200   .text
+80001f00   C$$EXIT
+80001cc0   _GPIO_init
+80001200   _PLL0_init
+80001564   _PLL1_init
+800017e4   _PSCModuleControl
+80001200   __STACK_END
+00001000   __STACK_SIZE
+00000001   __TI_args_main
+80001de0   ___TI_cpp_init
+80001f6c   ___TI_enable_exit_profile_output
+ffffffff   ___TI_pprof_out_hndl
+ffffffff   ___TI_prof_data_size
+ffffffff   ___TI_prof_data_start
+ffffffff   ___binit__
+80001f70   ___bss__
+ffffffff   ___c_args__
+80001f20   ___cinit__
+80000200   ___data__
+80000200   ___edata__
+80001f74   ___end__
+80001f20   ___etext__
+ffffffff   ___pinit__
+80001200   ___text__
+80001e40   __args_main
+80001a00   __auto_init
+80001f64   __cleanup_ptr
+80001f68   __dtors_ptr
+80000200   __stack
+80001f00   _abort
+80001d60   _c_int00
+80001b80   _copy_in
+80001cf0   _disable_int
+80001d08   _enable_int
+80001ac0   _exit
+80001f70   _flag
+80001ec0   _fpga_isr
+80001e80   _main
+80001c20   _memcpy
+80001920   _pinmux
+80001760   _psc
+80001728   _sw_wait
+ffffffff   binit
+80001f20   cinit
+80000200   edata
+80001f74   end
+80001f20   etext
+ffffffff   pinit
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000001   __TI_args_main
+00001000   __STACK_SIZE
+80000200   .data
+80000200   ___data__
+80000200   ___edata__
+80000200   __stack
+80000200   edata
+80001200   .text
+80001200   _PLL0_init
+80001200   __STACK_END
+80001200   ___text__
+80001564   _PLL1_init
+80001728   _sw_wait
+80001760   _psc
+800017e4   _PSCModuleControl
+80001920   _pinmux
+80001a00   __auto_init
+80001ac0   _exit
+80001b80   _copy_in
+80001c20   _memcpy
+80001cc0   _GPIO_init
+80001cf0   _disable_int
+80001d08   _enable_int
+80001d60   _c_int00
+80001de0   ___TI_cpp_init
+80001e40   __args_main
+80001e80   _main
+80001ec0   _fpga_isr
+80001f00   C$$EXIT
+80001f00   _abort
+80001f20   ___cinit__
+80001f20   ___etext__
+80001f20   cinit
+80001f20   etext
+80001f64   __cleanup_ptr
+80001f68   __dtors_ptr
+80001f6c   ___TI_enable_exit_profile_output
+80001f70   $bss
+80001f70   .bss
+80001f70   ___bss__
+80001f70   _flag
+80001f74   ___end__
+80001f74   end
+ffffffff   ___TI_pprof_out_hndl
+ffffffff   ___TI_prof_data_size
+ffffffff   ___TI_prof_data_start
+ffffffff   ___binit__
+ffffffff   ___c_args__
+ffffffff   ___pinit__
+ffffffff   binit
+ffffffff   pinit
+
+[51 symbols]
